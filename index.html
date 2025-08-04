@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warung Seblak Pedas</title>
+  <meta name="description" content="Warung seblak dengan berbagai level kepedasan. Menyajikan seblak kerupuk, seblak ceker, seblak bakso dengan bumbu rahasia yang menggugah selera.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warung Seblak Pedas - Sensasi Pedas yang Menggoda Selera</title>
+<style>
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+h1, h2, h3 {
+  color: #e74c3c;
+}
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+section {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.hero {
+  background-image: url('https://via.placeholder.com/1920x1080'); /* Ganti dengan gambar hero Anda */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 0;
+}
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 1em;
+}
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.testimonial {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+}
+.contact-item {
+    margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+  .menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+    <!-- Disclaimer Popup Modal -->
+    <div id="disclaimer-popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" style="display: block;">
+      <div class="bg-white rounded-lg p-6 max-w-md mx-4 shadow-xl">
+        <div class="text-center">
+          <div class="mb-4">
+            <svg class="mx-auto h-12 w-12 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.268 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+            </svg>
+          </div>
+          
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">⚠️ Peringatan Penting</h3>
+          
+          <div class="text-sm text-gray-600 mb-4 text-left">
+            <p class="mb-2">• Website ini adalah <strong>hasil kreasi NYAI-Autokeren</strong></p>
+            <p class="mb-2">• Menggunakan domain <strong>keren.co.id</strong></p>
+            <p class="mb-2">• Kami <strong>tidak bertanggung jawab</strong> atas informasi bisnis yang ditampilkan</p>
+            <p class="mb-2">• Harap lakukan <strong>verifikasi sendiri</strong> sebelum bertransaksi</p>
+          </div>
+          
+          <div class="mb-4 p-3 bg-blue-50 rounded-lg">
+            <p class="text-sm text-blue-800">
+              <strong>Ingin menghilangkan peringatan ini?</strong><br>
+              Upgrade ke paket premium untuk website tanpa disclaimer
+            </p>
+          </div>
+          
+          <div class="flex flex-col space-y-2">
+            <button 
+              id="continue-btn"
+              onclick="closeDisclaimer()" 
+              class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 cursor-pointer"
+            >
+              ✅ Lanjutkan ke Website
+            </button>
+            
+            <a 
+              href="https://autokeren.com" 
+              target="_blank"
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg text-center transition-colors duration-200 no-underline block"
+            >
+              🌐 Hubungi NYAI - Upgrade Premium
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      #main-content {
+        filter: blur(3px);
+        pointer-events: none;
+        transition: filter 0.3s ease;
+      }
+      
+      .disclaimer-hidden {
+        filter: none !important;
+        pointer-events: auto !important;
+      }
+    </style>
+
+    <script>
+      function closeDisclaimer() {
+        console.log('Closing disclaimer popup...');
+        
+        try {
+          const popup = document.getElementById('disclaimer-popup');
+          if (popup) {
+            popup.style.opacity = '0';
+            popup.style.transition = 'opacity 0.3s ease';
+            setTimeout(() => {
+              popup.style.display = 'none';
+            }, 300);
+          }
+          
+          const mainContent = document.getElementById('main-content');
+          if (mainContent) {
+            mainContent.classList.add('disclaimer-hidden');
+            mainContent.style.filter = 'none';
+            mainContent.style.pointerEvents = 'auto';
+          }
+          
+          localStorage.setItem('disclaimerAccepted', 'true');
+          
+        } catch (error) {
+          console.error('Error closing disclaimer:', error);
+          document.getElementById('disclaimer-popup').style.display = 'none';
+          document.getElementById('main-content').style.filter = 'none';
+        }
+      }
+      
+      document.addEventListener('DOMContentLoaded', function() {
+        const popup = document.getElementById('disclaimer-popup');
+        const accepted = localStorage.getItem('disclaimerAccepted');
+        
+        if (popup && !accepted) {
+          popup.style.display = 'flex';
+          popup.style.opacity = '1';
+        } else if (accepted) {
+          closeDisclaimer();
+        }
+      });
+      
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeDisclaimer();
+        }
+      });
+    </script>
+  
+<div id="main-content">
+
+<section class="hero">
+  <h1>Warung Seblak Pedas</h1>
+  <p>Sensasi Pedas yang Menggoda Selera</p>
+</section>
+
+<section>
+  <h2>Tentang Kami</h2>
+  <p>Warung Seblak Pedas hadir untuk memanjakan lidah Anda dengan berbagai varian seblak dengan level kepedasan yang bisa Anda pilih sendiri.  Kami menggunakan resep rahasia keluarga yang turun temurun, menghasilkan cita rasa seblak yang autentik dan menggugah selera.  Bahan-bahan berkualitas dan selalu segar menjadi prioritas kami untuk memastikan setiap gigitan memberikan pengalaman kuliner yang tak terlupakan.</p>
+</section>
+
+<section>
+  <h2>Menu Kami</h2>
+  <div class="menu">
+    <div class="menu-item"><h3>Seblak Kerupuk Original</h3><p>Rp 15.000</p></div>
+    <div class="menu-item"><h3>Seblak Kerupuk Level 1</h3><p>Rp 17.000</p></div>
+    <div class="menu-item"><h3>Seblak Kerupuk Level 2</h3><p>Rp 19.000</p></div>
+    <div class="menu-item"><h3>Seblak Kerupuk Level 3</h3><p>Rp 21.000</p></div>
+    <div class="menu-item"><h3>Seblak Ceker Original</h3><p>Rp 20.000</p></div>
+    <div class="menu-item"><h3>Seblak Ceker Level 1</h3><p>Rp 22.000</p></div>
+    <div class="menu-item"><h3>Seblak Ceker Level 2</h3><p>Rp 24.000</p></div>
+    <div class="menu-item"><h3>Seblak Ceker Level 3</h3><p>Rp 26.000</p></div>
+    <div class="menu-item"><h3>Seblak Bakso Original</h3><p>Rp 25.000</p></div>
+    <div class="menu-item"><h3>Seblak Bakso Level 1</h3><p>Rp 27.000</p></div>
+    <div class="menu-item"><h3>Seblak Bakso Level 2</h3><p>Rp 29.000</p></div>
+    <div class="menu-item"><h3>Seblak Bakso Level 3</h3><p>Rp 31.000</p></div>
+    <div class="menu-item"><h3>Seblak Mie Original</h3><p>Rp 18.000</p></div>
+    <div class="menu-item"><h3>Seblak Mie Level 1</h3><p>Rp 20.000</p></div>
+    <div class="menu-item"><h3>Seblak Kuah (pilih topping)</h3><p>Rp 12.000</p></div>
+    <div class="menu-item"><h3>Es Teh Manis</h3><p>Rp 5.000</p></div>
+    <div class="menu-item"><h3>Es Jeruk</h3><p>Rp 7.000</p></div>
+
+
+  </div>
+</section>
+
+<section>
+  <h2>Testimoni Pelanggan</h2>
+  <div class="testimonial">
+    <p>"Seblaknya juara! Pedasnya pas banget, bikin nagih.  Sukses terus Warung Seblak Pedas!" -  <strong>Alya Putri</strong></p>
+  </div>
+  <div class="testimonial">
+    <p>"Rasanya enak banget, bumbu rahasianya bikin beda dari seblak lain.  Recomended banget!" - <strong>Bagas Prasetyo</strong></p>
+  </div>
+  <div class="testimonial">
+    <p>"Saya suka banget sama seblak cekernya, empuk dan bumbunya meresap.  Porsinya juga banyak!" - <strong>Citra Maharani</strong></p>
+  </div>
+  <div class="testimonial">
+    <p>"Tempatnya bersih dan nyaman, pelayanannya ramah.  Bakal balik lagi!" - <strong>Dimas Adiwijaya</strong></p>
+  </div>
+  <div class="testimonial">
+    <p>"Seblaknya enak dan harga terjangkau.  Cocok banget buat yang suka pedas!" - <strong>Eka Nurhayati</strong></p>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Kontak Kami</h2>
+  <div class="contact-item"><h3>Alamat:</h3><p>Jl. Contoh No. 123, Kota Contoh, Jawa Barat</p></div>
+  <div class="contact-item"><h3>Jam Buka:</h3><p>09.00 - 21.00 WIB</p></div>
+  <div class="contact-item"><h3>Telepon:</h3><p>081234567890</p></div>
+  <div class="contact-item"><h3>Instagram:</h3><p>@warungseblakpedas</p></div>
+  <div class="contact-item"><h3>Facebook:</h3><p>Warung Seblak Pedas</p></div>
+</section>
+
+</div>
+</body>
+</html>
+```
+
+</html>
